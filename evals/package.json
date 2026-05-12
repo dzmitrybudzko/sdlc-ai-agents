@@ -1,0 +1,19 @@
+{
+  "name": "sdlc-evals",
+  "version": "1.0.0",
+  "description": "LLM-as-a-judge evaluation framework for SDLC agents",
+  "type": "module",
+  "scripts": {
+    "eval": "tsx framework/judge.ts",
+    "eval:code-reviewer": "tsx code-reviewer/run.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
