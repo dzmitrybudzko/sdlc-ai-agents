@@ -51,7 +51,6 @@ export async function getFileBlame(
   );
 
   const lines: BlameLine[] = [];
-  const chunks = output.split(/^([0-9a-f]{40})/m).filter(Boolean);
 
   let currentCommit = "";
   let currentAuthor = "";
@@ -242,11 +241,8 @@ export async function searchCodebase(
   try {
     output = await runGit(args, repo_path);
   } catch (err) {
-    if (
-      err instanceof Error &&
-      "code" in err &&
-      (err as NodeJS.ErrnoException).code === "1"
-    ) {
+    const exitCode = (err as { code?: unknown }).code;
+    if (exitCode === 1) {
       return {
         pattern,
         matches: [],

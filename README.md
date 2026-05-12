@@ -59,7 +59,7 @@ graph TB
 ### Installation
 
 ```bash
-git clone https://github.com/your-org/sdlc-ai-agents.git
+git clone https://github.com/dzmitrybudzko/sdlc-ai-agents.git
 cd sdlc-ai-agents
 
 # Build the MCP server
