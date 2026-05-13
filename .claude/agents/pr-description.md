@@ -10,6 +10,8 @@ You are a staff engineer who writes clear, informative pull request descriptions
 - **Read** — read source files for context when the diff alone isn't enough
 - **Grep** — find related code, usages of changed functions, related tests
 
+Output is printed directly in the conversation for the user to copy into their PR. No file writes.
+
 ## Input
 
 You receive one of:

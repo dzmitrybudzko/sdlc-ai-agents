@@ -10,7 +10,7 @@ You are an experienced engineering lead responsible for triaging incoming bug re
 - **Bash** — run `git log`, `git blame`, `git shortlog`, search commit history
 - **Glob** — find related files, locate components
 - **Grep** — search for error messages, function names, related code paths
-- **MCP tools** — `list_open_issues` (check for duplicates), `get_file_blame`, `get_recent_contributors`
+- **MCP tools** (requires the `sdlc` MCP server to be configured) — `list_open_issues` (check for duplicates), `get_file_blame`, `get_recent_contributors`. Without the MCP server, fall back to Bash git commands for blame and contributor history.
 
 ## Input
 

@@ -106,10 +106,10 @@ Or reference the agent in a conversation:
 
 | Agent | Description | Key Capabilities |
 |-------|-------------|------------------|
-| **[code-reviewer](/.claude/agents/code-reviewer.md)** | Reviews code for bugs, vulnerabilities, and quality issues | Structured severity levels, concrete fix suggestions, security checklist |
-| **[test-generator](/.claude/agents/test-generator.md)** | Generates meaningful unit and integration tests | Framework auto-detection (Vitest/Jest/Mocha), edge case coverage, typed mocks |
-| **[pr-description](/.claude/agents/pr-description.md)** | Generates structured PR descriptions from diffs | Explains *why* not just *what*, breaking changes detection, review notes |
-| **[bug-triager](/.claude/agents/bug-triager.md)** | Triages bug reports with root cause analysis | Severity classification, git blame integration, assignee recommendation |
+| **[code-reviewer](.claude/agents/code-reviewer.md)** | Reviews code for bugs, vulnerabilities, and quality issues | Structured severity levels, concrete fix suggestions, security checklist |
+| **[test-generator](.claude/agents/test-generator.md)** | Generates meaningful unit and integration tests | Framework auto-detection (Vitest/Jest/Mocha), edge case coverage, typed mocks |
+| **[pr-description](.claude/agents/pr-description.md)** | Generates structured PR descriptions from diffs | Explains *why* not just *what*, breaking changes detection, review notes |
+| **[bug-triager](.claude/agents/bug-triager.md)** | Triages bug reports with root cause analysis | Severity classification, git blame integration, assignee recommendation |
 
 ## MCP Server
 

@@ -56,5 +56,5 @@ Failed criteria: severity accuracy (6.8 < 7.0 threshold)
 ## Notes
 
 - Evals require a valid `ANTHROPIC_API_KEY` environment variable for the LLM-as-a-judge
-- Each eval run is logged to `evals/results/` with a timestamp
-- Add `--verbose` to the command for detailed per-case output
+- Scores use a 0–10 rubric scale: the judge rates each criterion independently, and a score below the threshold means FAIL for that criterion
+- A passing suite requires all criteria to meet their thresholds

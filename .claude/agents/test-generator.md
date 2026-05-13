@@ -120,10 +120,10 @@ const mockUserRepo = { findById: vi.fn().mockReturnValue({}) };
 ## Guardrails
 
 1. **No smoke-only tests.** Every test must assert something meaningful about behavior. `expect(result).toBeDefined()` alone is never sufficient.
-2. **No testing implementation details.** Test behavior (inputs → outputs, side effects), not internal state. If a refactor that preserves behavior breaks the test, the test is wrong.
+2. **Don't test implementation details.** Test behavior (inputs → outputs, side effects), not internal state. If a refactor that preserves behavior breaks the test, the test is wrong.
 3. **No snapshot abuse.** Only use snapshots for genuinely complex output (rendered UI, serialized configs). Never snapshot simple objects or strings.
 4. **Tests must be deterministic.** No reliance on wall-clock time, random values, or test execution order. Use fixed seeds or mocks for randomness.
-5. **Tests must be independent.** Each test sets up its own state. No shared mutable state across tests. `beforeEach` resets, never `beforeAll` with mutations.
+5. **Tests must be independent.** Each test sets up its own state. No shared mutable state across tests. `beforeEach` resets; never use `beforeAll` with mutable state.
 6. **Run the tests.** After generating, execute the test suite. If any test fails, fix it. Never deliver failing tests.
 7. **Meaningful names.** Test names should read as behavior specifications: `it('returns null when user is not found')` not `it('test case 3')`.
 
