@@ -9,3 +9,4 @@ dist/
 Thumbs.db
 coverage/
 .nyc_output/
+docs/verification-guide.md
