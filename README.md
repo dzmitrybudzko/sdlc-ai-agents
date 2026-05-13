@@ -4,48 +4,30 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-agents-orange.svg)](https://docs.anthropic.com/en/docs/claude-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A production-ready collection of AI agents that optimize the software development lifecycle using Claude Code. Each agent is a self-contained task executor with scoped tools, structured output, and built-in guardrails — designed for distribution across engineering teams.
+A collection of AI agents for common SDLC tasks, built as Claude Code configurations. Includes four agents (code review, test generation, PR descriptions, bug triage), an MCP server for GitHub/git integration, and an LLM-as-a-judge evaluation framework.
 
 ## Architecture
 
 ```mermaid
 graph TB
     subgraph "Claude Code"
-        A1[Code Reviewer Agent]
-        A2[Test Generator Agent]
-        A3[PR Description Agent]
-        A4[Bug Triager Agent]
+        Agents[Agents<br/>code-reviewer · test-generator<br/>pr-description · bug-triager]
+        Config[Rules & Commands]
     end
 
-    subgraph "Configuration Layer"
-        R[Rules<br/>TypeScript, Testing]
-        C[Commands<br/>evaluate, setup]
-    end
-
-    subgraph "MCP Server"
-        T1[get_pr_diff]
-        T2[list_open_issues]
-        T3[get_file_blame]
-        T4[get_recent_contributors]
-        T5[search_codebase]
-    end
+    MCP[MCP Server<br/>5 tools]
+    Evals[Eval Framework<br/>LLM-as-a-Judge]
 
     subgraph "External Systems"
         GH[GitHub API]
         GIT[Local Git]
     end
 
-    subgraph "Quality Assurance"
-        E[Eval Framework<br/>LLM-as-a-Judge]
-        D[Test Datasets]
-    end
-
-    A1 & A2 & A3 & A4 --> T1 & T2 & T3 & T4 & T5
-    T1 & T2 --> GH
-    T3 & T4 & T5 --> GIT
-    R --> A1 & A2 & A3 & A4
-    E --> D
-    E -.->|grades| A1 & A2 & A3 & A4
+    Config --> Agents
+    Agents --> MCP
+    MCP --> GH
+    MCP --> GIT
+    Evals -.->|grades| Agents
 ```
 
 ## Quick Start
