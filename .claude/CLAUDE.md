@@ -54,6 +54,13 @@ Tools are defined in `mcp-server/src/tools/`. Each tool module exports functions
 
 Run evals with the `/evaluate` command. The evaluation framework uses LLM-as-a-judge (Claude API) to grade agent outputs against defined criteria. See `evals/README.md` for details on adding test cases and criteria.
 
+## When to Use Agents
+
+- When the user asks to review code, check for bugs, or look at a diff → use the **code-reviewer** agent
+- When the user asks to write, generate, or add tests → use the **test-generator** agent
+- When the user asks to write a PR description or prepare a PR → use the **pr-description** agent
+- When the user describes a bug, pastes an error log, or shares a stack trace → use the **bug-triager** agent
+
 ## Rules
 
 Rules in `.claude/rules/` activate based on file context:
